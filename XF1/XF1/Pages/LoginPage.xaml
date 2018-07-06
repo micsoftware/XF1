@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:ContentPageBase xmlns="http://xamarin.com/schemas/2014/forms" 
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                       x:Class="XF1.LoginPage"
+                       xmlns:local="clr-namespace:XF1;assembly=XF1"
+                       xmlns:vms="clr-namespace:XF1.ViewModels"
+                       x:TypeArguments="vms:LoginPageViewModel">
+    <ContentPage.Content>
+        <Grid BackgroundColor="#505971"  Padding="10, 5, 10, 5"> 
+            <StackLayout Orientation="Vertical"  HorizontalOptions="Center" VerticalOptions="Center">
+                <!-- Place new controls here -->
+                <local:FrameApp HasShadow="false" BorderColor="Transparent" Padding="5" BackgroundColor="White" CornerRadius="5" TouchBackgroundColor="White">
+                    <Grid ColumnSpacing="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <local:EntryApp                   
+                            Grid.Column="0" 
+                            FontSize="Small"
+                            IsClearBackground="true"
+                            VerticalOptions="Center"
+                            Placeholder="Email"
+                            Text="{Binding Email, Mode=TwoWay}"
+                            BackgroundColor="Transparent"
+                            PlaceholderColor="#D6E1F1"/>
+                        <Image Grid.Column="1" WidthRequest="25" HeightRequest="25" VerticalOptions="Center" Source="email_login_icon"  />
+                    </Grid>
+                </local:FrameApp>
+                <local:FrameApp HasShadow="false" BorderColor="Transparent" Padding="5" BackgroundColor="White" CornerRadius="5" TouchBackgroundColor="White">
+                    <Grid ColumnSpacing="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <local:EntryApp
+                            Grid.Column="0"
+                            FontSize="Small"
+                            IsClearBackground="true"
+                            VerticalOptions="Center"
+                            Placeholder="Password"
+                            Text="{Binding Password, Mode=TwoWay}"
+                            IsPassword="True"
+                            PlaceholderColor="#D6E1F1"/>
+                        <Image Grid.Column="1" WidthRequest="25" HeightRequest="25" VerticalOptions="Center" Source="pass_lock_icon" />
+                    </Grid>
+                </local:FrameApp>
+                <Grid Margin="0, 30, 0, 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <local:FrameApp
+                        TouchUp="{Binding SignInCommand}"
+                        Grid.Column="1" 
+                        CornerRadius="16" 
+                        Padding="20,8,20,8" 
+                        HasShadow="false" 
+                        BorderColor="Transparent" 
+                        BackgroundColor="White"
+                        TouchBackgroundColor="#212157">
+                        <Label TextColor="#7195b6" FontSize="Medium" Text="Sign In" HorizontalOptions="CenterAndExpand" />
+                    </local:FrameApp>
+                </Grid>
+                <Grid Margin="0, 10, 0, 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <local:FrameApp
+                        TouchUp="{Binding .}"
+                        Grid.Column="1"
+                        CornerRadius="16" 
+                        Padding="20,10,20,10" 
+                        HasShadow="false" 
+                        BorderColor="Transparent" 
+                        BackgroundColor="#212157"
+                        TouchBackgroundColor="#7195b6">
+                        <local:LabelApp
+                            HorizontalOptions="CenterAndExpand"
+                            FontSize="Medium"
+                            Text="Sign Up"
+                            TextColor="White">
+                        </local:LabelApp>
+                    </local:FrameApp>
+                </Grid>
+            </StackLayout>
+            
+        </Grid>
+    </ContentPage.Content>
+</local:ContentPageBase>

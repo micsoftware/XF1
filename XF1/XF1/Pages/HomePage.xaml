@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:ContentPageBase xmlns="http://xamarin.com/schemas/2014/forms" 
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       x:Class="XF1.HomePage"
+                       xmlns:local="clr-namespace:XF1;assembly=XF1"
+                       xmlns:vms="clr-namespace:XF1.ViewModels"
+                       x:TypeArguments="vms:HomePageViewModel">
+    <ContentPage.Content>
+         <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="{Binding WelcomeMessage}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+    </StackLayout>
+    </ContentPage.Content>
+</local:ContentPageBase>

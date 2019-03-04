@@ -1,2 +1,2 @@
 #Introduction 
-Xamarin Native for android using MVVMCross
+Xamarin Forms sample project using MVVM pattern
